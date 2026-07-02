@@ -96,6 +96,10 @@ You may launch with a teleop node which will try to connect to a joystick:
 ```bash
 ros2 launch roverrobotics_driver <robot>_teleop.launch.py
 ```
+If connected using NoMachine, add this parameter:
+```bash
+ros2 launch roverrobotics_driver <robot>_teleop.launch.py joy_dev:=/dev/input/js1
+```
 
 ### What is launched with this?
 Our launch files launch (1) The Robot Driver, (2) The robot description, (3) an accessories launch, and (4) A PS4 Controller Driver.
