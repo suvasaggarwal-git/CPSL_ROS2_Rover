@@ -101,6 +101,15 @@ If connected using NoMachine, add this parameter:
 ros2 launch roverrobotics_driver <robot>_teleop.launch.py joy_dev:=/dev/input/js1
 ```
 
+When SSH'd into the rover, the default service will cause twitching as the service on startup reads the ssh'd device as the joystick. To turn off the service, run:
+```bash
+sudo systemctl stop roverrobotics.service
+```
+To start it back up, run:
+```bash
+sudo systemctl start roverrobotics.service
+```
+
 ### What is launched with this?
 Our launch files launch (1) The Robot Driver, (2) The robot description, (3) an accessories launch, and (4) A PS4 Controller Driver.
 (1) The Robot Driver: responsible for interfacing with our robot and handling velocity commands as well as publishing wheel odometry
